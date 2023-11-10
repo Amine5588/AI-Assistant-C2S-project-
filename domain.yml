@@ -1,0 +1,138 @@
+version: '3.1'
+intents:
+- affirm
+- deny
+- goodbye
+- greet
+- place_order
+- provide_item
+- provide_payment
+- provide_quantity
+- give_menu
+#- give_me_suggestions
+#- inform_foodtype
+entities:
+- item
+#- quantity
+- payment
+- number
+#- foodtype
+actions:
+- utter_bye_comeagain
+- utter_greet
+- utter_order_completed
+- utter_ask_payment_method
+- utter_ask_quantity
+- utter_ask_additional_food
+- utter_show_purchase_details
+- utter_ask_item
+- go_back
+- action_fetch_menu
+- action_check_menu_item
+- utter_show_menu
+- utter_we_dont_have_choose_again
+#- utter_ask_foodtype
+#- action_generate_suggestions
+#- utter_present_suggestions
+
+responses:
+  utter_greet:
+  - text: Hello! How can I assist you today?
+  - text: Hi there! How may I help you?
+  - text: Hey! Welcome to our restaurant. How can I assist you?
+  - text: Good morning! How can I make your day better?
+  - text: Greetings! What can I do for you today?
+  utter_ask_item:
+  - text: What item would you like to order?
+  - text: Please let me know what food item you want to order.
+  - text: Can you tell me the name of the food item you'd like to have?
+  - text: What specific dish or item are you interested in ordering?
+  - text: I'm here to help. Just tell me what you'd like to eat.
+  utter_ask_quantity:
+  - text: How many of  {item} would you like to order?
+  - text: Please specify the quantity of {item} you'd like to have.
+  - text: Let me know how many {item} you want to order.
+  - text: How many servings of  {item} would you like to have?
+  - text: Specify the quantity of {item} you'd like to include in your order.
+  utter_ask_additional_food:
+  - text: Would you like to add any additional food items to your order?
+  - text: Do you want to include any other food items in your order?
+  - text: Can I interest you in adding more food to your order?
+  - text: Would you like to order anything else along with ur order ?
+  - text: Do you want to include any sides or extras with your order?
+  utter_show_purchase_details:
+  - text: 'Here are the purchase details:  {number} {item}.'
+  - text: 'I have your order details as follows:  {number} {item}. '
+  - text: "you ordered :  {number} {item}. "
+  utter_show_menu: 
+  - text: 'here is the menu : {menu_items}'
+  utter_ask_payment_method:
+  - text: How would you like to make the payment? We accept cash, credit cards, and mobile wallets.
+  - text: 'Please let us know your preferred payment method: cash, credit card, or mobile wallet.'
+  - text: What payment method would you like to use? We accept cash, credit cards, and mobile payments.
+  - text: Can you specify your payment preference? You can pay with cash, credit card, or mobile wallet.
+  utter_order_completed:
+  - text: Your order is complete. Thank you for choosing us!
+  - text: Congratulations! Your order is complete. Enjoy your meal!
+  - text: We've successfully processed your order. Thank you for your business!
+  - text: Your order has been completed. We appreciate your patronage!
+  - text: Mission accomplished! Your order is now complete. Thank you!
+  utter_bye_comeagain:
+  - text: Goodbye! We hope to see you again soon.
+  - text: Farewell! Have a wonderful day and come back soon.
+  - text: Goodbye and take care. Visit us again whenever you like!
+  - text: Thank you for choosing us! Goodbye and have a great day!
+  - text: Goodbye! We appreciate your visit. Come back anytime!
+  utter_we_dont_have_choose_again:
+  - text: Please choose another item..
+
+  
+  #utter_ask_foodtype:
+  #- text: "Sure! What type of food are you in the mood for? Snacks, meal, or beverage?"
+  
+  #utter_present_suggestions:
+  #- text: "Here are some suggestions based on your preference: {suggestions}"
+
+
+slots:
+  item:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: item
+  number:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: number
+  payment:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: payment
+  menu_items:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+      action: action_fetch_menu
+  item_exists:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: custom
+      action: action_check_menu_item
+    
+
+
+#  foodtype:
+#    type: text
+#    mappings:
+#    - type: from_entity
+#      entity: foodtype
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

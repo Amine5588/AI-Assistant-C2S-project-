@@ -1,0 +1,53 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+# This default value must be replaced with a unique assistant name within your deployment
+assistant_id: 20230722-155640-odious-counterpoint
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+pipeline:
+- name: WhitespaceTokenizer
+  token_pattern: (?u)\b\w+\b
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+  OOV_token: oov
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 200
+  ranking_length: 5
+- name: DucklingEntityExtractor
+  url: http://localhost:8000
+  dimensions:
+  - time 
+  - number
+  - volume
+  - email
+  - number
+  - amount-of-money
+- name: EntitySynonymMapper
+- name: FallbackClassifier
+  threshold: 0.7
+
+#conda acconapolicies: null
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy
+- name: UnexpecTEDIntentPolicy
+  max_history: 5
+  epochs: 100
+- name: TEDPolicy
+  max_history: 5
+  epochs: 100
+  constrain_similarities: true
+#- name: "ner_synonyms"
