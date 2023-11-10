@@ -1,3 +1,7 @@
+# CHECK BOTH PAPERS FOR MORE INFO 
+# C2S Presentation for the work.pdf AND Report for the AI assistant Implementation.pdf
+
+
 # C2s - the Rasa Demo Bot
 
 
