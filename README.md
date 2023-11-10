@@ -2,7 +2,8 @@
 # C2S Presentation for the work.pdf AND Report for the AI assistant Implementation.pdf
 # this is the flow chart diagram for our ai assistant ( used for a drive-through restaurant ) 
 https://drive.google.com/file/d/10LG7Kod-4MOGk2AZSJgSBlO97YCDagIy/view
-# C2s - the Rasa Demo Bot
+# C2s - the Rasa Demo Bot PRESENTATION 
+https://www.canva.com/design/DAFrUhcLIDw/agl91Brw4yxVIbCCY6BjEQ/edit?utm_content=DAFrUhcLIDw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 
 ## :surfer: Introduction
