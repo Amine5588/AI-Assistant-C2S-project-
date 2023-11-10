@@ -1,0 +1,115 @@
+version: "3.1"
+
+stories:
+
+- story: Greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: order_first_exists_steps
+  steps:
+  - intent: place_order
+  - action: utter_ask_item
+  - intent: provide_item
+    entities:
+    - item
+  - action: action_fetch_menu
+  - action: action_check_menu_item  
+  - slot_was_set:
+    - item_exists: true
+  #- action: utter_ask_quantity
+  - intent: provide_quantity
+    entities:
+    - quantity
+  - action: utter_show_purchase_details
+  - action: utter_ask_additional_food
+
+- story: order_first_notexists_step
+  steps:
+  - intent: place_order
+  - action: utter_ask_item
+  - intent: provide_item
+    entities:
+    - item
+  - action: action_fetch_menu
+  - action: action_check_menu_item  
+  - slot_was_set:
+    - item_exists: false
+  #- intent: provide_item  
+  #- action: utter_we_dont_have_choose_again
+
+
+- story: order_yep_add_step
+  steps: 
+  - action: utter_show_purchase_details
+  - action: utter_ask_additional_food
+  - intent: affirm
+  - action: utter_ask_item
+
+- story: order_nope_step
+  steps:
+  - action: utter_show_purchase_details
+  - action: utter_ask_additional_food
+  - intent: deny
+  - action: utter_ask_payment_method
+
+- story: final_steps
+  steps:
+  - action: utter_ask_payment_method
+  - intent: provide_payment
+    entities:
+    - payment  
+  - action: utter_order_completed
+  
+- story: byebye
+  steps:
+  - intent: goodbye
+  - action: utter_bye_comeagain
+
+- story: ask menu
+  steps:
+  - intent: give_menu
+  - action: action_fetch_menu
+  - action: utter_show_menu  
+  #- intent: provide_item
+  #  entities:
+  #  - item
+  #- action: action_check_menu_item
+
+#- story: go back to ask_item when user says go_back
+#  steps: 
+#  - intent: go_back
+#  - checkpoint: check_go_back 
+
+
+
+
+#
+#- story: suggestions
+#  steps: 
+#  - intent: give_me_suggestions
+#  - action: utter_ask_foodtype
+#  - intent: inform_foodtype
+#  - action: action_generate_suggestions
+
+#- story: Get food suggestions
+#  steps:
+#  - intent: give_me_suggestions
+#  - action: utter_ask_foodtype
+#  - intent: inform_foodtype
+#    entities:
+#    - foodtype
+#  - action: action_generate_suggestions
+#  - action: utter_present_suggestions
+
+#  - intent: inform_foodtype
+#    entities:
+#    - foodtype
+#  - action: action_generate_suggestions
+#  - action: utter_present_suggestions
+#  - intent: inform_foodtype
+#    entities:
+#    - foodtype
+#  - action: action_generate_suggestions
+#  - action: utter_present_suggestions

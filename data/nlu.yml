@@ -1,0 +1,233 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi there!
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Thanks and goodbye
+    - Have a great day
+    - Farewell
+    - Take care
+    - Goodbye and enjoy your meal
+    - See you later
+    - Thank you and goodbye
+    - Have a wonderful day
+    - Goodbye, and come back soon
+    - thank you bye
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Absolutely
+    - Yes, please
+    - I agree
+    - That's right
+    - Yes, that's what I meant
+    - Definitely
+    - Yes, I'm sure
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - Not really
+    - I'm not interested
+    - No, I don't need it
+    - Nope
+    - I'd rather not
+    - I'm good, thanks
+    - No, that's not what I want
+- intent: place_order
+  examples: |
+    - I'd like to place an order, please.
+    - Can I order something from the menu?
+    - I want to place a food order.
+    - How can I order food from this restaurant?
+    - Can you help me with placing an order?
+    - I'm interested in ordering some food.
+    - Is it possible to place an order here?
+    - I'd like to make a food order, please.
+    - Can you take my order?
+    - What's the process for placing an order?
+    - i want to place an order
+- intent: provide_item
+  examples: |
+    - I'd like a [cheeseburger](item)
+    - Can I have a [pizza](item)?
+    - Give me a [chicken sandwich](item)
+    - I want to order [sushi](item)
+    - Can you add [fries](item) to my order?
+    - I'd like a [salad](item) with extra [dressing](item)
+    - Can I get a [milkshake](item)?
+    - I'd like an [appetizer](item)
+    - That [dessert](item) looks tempting
+    - Can I have a [beverage](item)?
+    - i want to have a [pizza](item)
+    - i want a [cheeseburger](item)
+    - i'd love a [sandwich](item) #
+- intent: provide_quantity
+  examples: |
+    - give me [one] {"entity": "number", "value": "1"} [pizza] (item)
+    - give me [two] {"entity": "number", "value": "2"} [sandwich] (item)
+    - give me [three] {"entity": "number", "value": "3"}
+    - give me [four] {"entity": "number", "value": "4"}
+    - give me [five] {"entity": "number", "value": "5"}
+    - Can you give me [three] (number) [slices of pizza] (item) ?
+    - I want [two] (number) [drinks] (item).
+    - Can you get me [three] (number) [slices of pizza] (item)?
+    - Please give me [five] (number) [sandwich] (item) .
+    - the number is [six] (number) [bottles of water] (item).
+    - Could you bring me [two] (number) [bags of chips] (item)?
+    - the number is [three] (number) pieces of [cake] (item).
+    - the number is [seven] (number) [burgers] (item) , please.
+    - Can you get me [ten] (number) [fries] (item) ?
+    - I want [2](number) [cheeseburgers](item)
+    - Can I get [3](number) [pizzas](item)?
+    - Give me [4](number) [sushi rolls](item)
+    - I'd like [1](number) [salad](item)
+    - Can you add [2](number) [sides](item) to my order?
+    - I want [3](number) [cans](item) of soda
+    - Can I get [2](number) [orders](item) of fries?
+    - I'd like [1](number) [dessert](item)
+    - That [appetizer](item) looks good, I'll take [2](number)
+    - Can I have [4](number) [beverages](item)?
+    - i want [3](number) [pizza](item)
+    - [1](number)
+    - [6](number)
+- synonym: "1"
+  examples: |
+    - one
+    - 1
+    - single
+    - solo
+
+- synonym: "2"
+  examples: |
+    - two
+    - 2
+    - couple
+    - pair
+
+- synonym: "3"
+  examples: |
+    - three
+    - 3
+    - trio
+    - triplet
+
+- synonym: "4"
+  examples: |
+    - four
+    - 4
+    - quartet
+
+- synonym: "5"
+  examples: |
+    - five
+    - 5
+    - 5 pieces
+    - 5 items
+    - 5 units
+
+- synonym: "6"
+  examples: |
+    - six
+    - 6
+    - sextet
+
+- synonym: "10"
+  examples: |
+    - ten
+    - 10
+    - 10 pieces
+    - 10 items
+    - 10 units
+
+- intent: provide_payment
+  examples: |
+    - I will pay with [cash](payment)
+    - Can I pay by [credit card](payment)?
+    - I prefer to use [Apple Pay](payment)
+    - Can I pay using [Google Pay](payment)?
+    - I want to pay in [cash](payment)
+    - Please charge my [credit card](payment)
+    - I'll use [PayPal](payment) for payment
+    - Can I pay with [debit card](payment)?
+    - I'll pay with [mobile wallet](payment)
+    - I prefer [contactless payment](payment)
+    - i'll use [cash](payment)
+
+- intent: give_menu
+  examples: |
+    - show me menu
+    - menu please
+    - do you have a menu
+
+#- intent: give_me_suggestions
+#  examples: |
+#    - I need some suggestions.
+#    - What do you suggest?
+#    - Any recommendations?
+#    - Can you give me some ideas?
+#    - I'm looking for suggestions.
+#    - What are some options?
+#    - Could you suggest something?
+#    - I'm open to suggestions.
+#    - Can you provide some recommendations?
+
+#- intent: inform_foodtype
+#  examples: |    
+#    - I prefer [snacks] (foodtype)
+#    - My preference is a [meal] (foodtype)
+#    - I would like a [beverage] (foodtype)
+#    - [Snacks] (foodtype) please
+#    - [Meal] (foodtype) sounds good
+#    - Can I have a [beverage] (foodtype)?
+#    - I want something from the [snacks] (foodtype) category
+#    - Give me a [meal] (foodtype) option
+#    - I'm in the mood for a [beverage] (foodtype)
+#    - [Snacks] (foodtype) are my preference
+
+- intent: go_back
+  examples: |
+    - Go back
+    - Can I go back?
+    - I want to go back
+    - Take me back
+    - Start over
+    - Let's go back
+    - Restart the process
+    - Undo
+    - Previous step
+    - Backtrack

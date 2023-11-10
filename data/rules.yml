@@ -1,0 +1,46 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_bye_comeagain
+
+
+- rule: Go back to asking for item
+  steps:
+  - intent: go_back
+  - action: utter_greet
+
+- rule: show purchase history
+  steps:
+  - intent: provide_quantity
+  - action: utter_show_purchase_details
+  - action: utter_ask_additional_food
+
+#- rule: run action choose again if item does not exist
+#  condition: 
+#  - slot_was_set:
+#    - item_exists: false
+#  steps:
+#  - action: utter_ask_item
+#  - intent: provide_item
+#    entities:
+#    - item
+#  - action: action_fetch_menu
+#  - action: action_check_menu_item  
+
+
+#- rule: run action choose again if item does not exist
+#  condition: 
+#  - slot_was_set:
+#    - item_exists: true
+#  steps:
+#  - intent: provide_quantity
+
+
+#- rule: Handle suggestion request
+#  steps:
+#  - intent: give_me_suggestions
+#  - action: utter_ask_foodtype  
