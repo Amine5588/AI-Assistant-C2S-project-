@@ -1,10 +1,10 @@
-# Sara - the Rasa Demo Bot
+# C2s - the Rasa Demo Bot
 
 
 ## :surfer: Introduction
 The purpose of this repo is to showcase a contextual AI assistant built with the open source Rasa framework.
 
-Sara is an alpha version and lives in our docs, 
+C2S is an alpha version and lives in our docs, 
 helping developers getting started with our open source tools. It supports the following user goals:
 
 - Understanding the Rasa framework
@@ -15,12 +15,11 @@ helping developers getting started with our open source tools. It supports the f
 - Requesting a call with Rasa's sales team
 - Handling basic chitchat
 
-You can find planned enhancements for Sara in the
-[Project Board](https://github.com/RasaHQ/rasa-demo/projects/1)
+
 
 ## 👷‍ Installation
 
-To install Sara, please clone the repo and run:
+To install C2S, please clone the repo and run:
 
 ```sh
 cd rasa-demo
@@ -35,7 +34,7 @@ This will install the bot and all of its requirements.
 Note that this bot should be used with python 3.6 or 3.7.
 
 
-## 🤖 To run Sara:
+## 🤖 To run C2S:
 
 Use `rasa train` to train a model (this will take a significant amount of memory to train,
 if you want to train it faster, try the training command with
