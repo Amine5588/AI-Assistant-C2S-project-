@@ -1,0 +1,274 @@
+/* static/styles.css */
+:root{
+    --gradient: linear-gradient(
+        45deg,
+        #383aa5,
+        #2023c7,
+        #a601ff3f,
+        #a801ff,
+        #ff6f91,
+        #ff9671,
+        #a801ff,
+        #a367c4
+
+    );
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #ddd;
+    background-image: var(--gradient);
+    background-size: 540% 540%;
+    animation: bg-animation 45s infinite alternate;
+}
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+header {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+.header-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+.header-container h1 {
+    color: #fff;
+    font-family: 'Quicksand';
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1; /* Ensure the title is on top of the hover effect */
+  }
+  
+.header-container:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ffb703;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+  }
+  
+.header-container:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  
+@keyframes logoAnimation {
+    0%, 100% {
+        transform: scale(1); /* Start and end with no scaling */
+    }
+    50% {
+        transform: scale(1.1); /* Scale up a bit in the middle */
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-bottom: 70px;
+
+
+}
+
+#greetingMessage {
+
+    text-align: center; /* Center the text */
+    font-size: 20px; /* Increase font size */
+    font-family: 'Quicksand';
+    font-weight: bold; /* Make it bold */
+    font-style: italic; /* Make it italic */
+    margin: 2rem 0; /* Add some margin for spacing */
+    margin-top: 50px; /* Move the text down by 20 pixels */
+    animation: floatAnimation 2s ease-in-out infinite;
+}
+
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0); /* Start and end position - no movement */
+    }
+    50% {
+        transform: translateY(-10px); /* Middle position - move up */
+    }
+}
+#arrowDown {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.userInput {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Quicksand';
+}
+
+.whiteSquare {
+    background-color: #fff; /* White background */
+    padding: 1rem; /* Add padding to create space around the mic image */
+    text-align: center; /* Center the mic image horizontally */
+    position: fixed; /* Position the container at the bottom of the page */
+    top: 85% ;
+    left: 50%; /* Move the container to the center horizontally */
+    transform: translateX(-50%); /* Center the container perfectly */
+    bottom: 1rem; /* Add space between the container and the bottom of the page */
+    border-radius: 8px; /* Add rounded corners to the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow for visual effect */
+    height: 34px;
+    width: 1800px;
+}
+#startButton {
+    padding: 10px 20px;
+    width: 56px; /* Adjust the width as needed */
+    height: 56px; /* Adjust the height as needed */
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Add transition for smooth scaling effect */
+    position: fixed;
+    top: 87%; /* Adjust top position as needed */
+    left: 50%; /* Adjust left position as needed */
+    transform: translate(-50%, -50%); /* Center the mic image both vertically and horizontally */
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+
+}
+
+
+
+#startButton:hover {
+    transform: translate(-50%, -50%) scale(1.8);
+}
+
+
+
+.loader {
+    height: 130px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the mic image both vertically and horizontally */
+
+}
+
+.loader .stroke{
+    display: block;
+    position: relative;
+    background: #f1f1f1;
+    height: 100%;
+    width: 10px;
+    border-radius: 50px ;
+    margin: 0 5px;
+    animation: animate 1.2s linear infinite;
+}
+@keyframes animate {
+    50% {
+        height: 20%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+.stroke:nth-child(1){
+    animation-delay: 0s;
+}
+.stroke:nth-child(2){
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(3){
+    animation-delay: 0.6s;
+}
+.stroke:nth-child(4){
+    animation-delay: 0.9s;
+}
+.stroke:nth-child(5){
+    animation-delay: 0.6s;
+}
+.stroke:nth-child(6){
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(7){
+    animation-delay: 0s;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#botResponse {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 100px;
+    text-align: center;
+}
+/* Apply the Roboto font */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800; /* Regular font weight */
+}
+
+/* For a specific text with a different font weight (e.g., bold) */
+.bold-text {
+    font-weight: 500; /* Bold font weight */
+}
+
+#recognizedSpeech {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2rem;
+    background-color: transparent;
+    padding: 0; /* Remove padding */
+    margin: 1rem auto; /* Add margin to center the bot response */
+    text-align: center; /* Center the bot response text */
+}
+
+/*
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(59, 105, 155, 0.911);
+    opacity: 0;
+    transform-origin: center bottom;
+    animation: waveAnimation 2s linear infinite;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: scaleY(0);
+    }
+    50% {
+        transform: scaleY(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+}*/

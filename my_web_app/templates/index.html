@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2S Solution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>C2S Solution</h1>
+          </div>
+    </header>
+    <main>
+        <div id="greetingMessage">
+            <h3>Welcome, I'm your AI assistant.</h3>
+            <h5>Press the button below to start.</h5>
+            <span id="arrowDown">&#9660;</span>
+
+        </div>
+        <div class="userInput">
+
+
+            
+            <div class="loader">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+
+        </div>
+        
+        <!-- Add a div to display the recognized speech -->
+        <div id="recognizedSpeech"></div>
+        
+    
+
+
+
+
+
+
+
+
+
+
+        <div class="whiteSquare"></div>
+            <img src="{{ url_for('static', filename='orange.png') }}" alt="Microphone" id="startButton">
+        </div>
+    
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
