@@ -10,15 +10,10 @@ https://www.canva.com/design/DAFrUhcLIDw/agl91Brw4yxVIbCCY6BjEQ/edit?utm_content
 The purpose of this repo is to showcase a contextual AI assistant built with the open source Rasa framework.
 
 C2S is an alpha version and lives in our docs, 
-helping developers getting started with our open source tools. It supports the following user goals:
+Our presentation aims to introduce the groundbreaking C2S Speech-to-Speech AI Assistant
 
-- Understanding the Rasa framework
-- Getting started with Rasa
-- Answering some FAQs around Rasa
-- Directing technical questions to specific documentation
-- Subscribing to the Rasa newsletter
-- Requesting a call with Rasa's sales team
-- Handling basic chitchat
+Purpose
+Our assistant seamlessly integrates three core components: Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and customised dialogue management. By combining these elements, the C2S AI Assistant redefines the way we interact with machines, fostering a natural and dynamic conversational experience that transcends traditional boundaries.
 
 
 
